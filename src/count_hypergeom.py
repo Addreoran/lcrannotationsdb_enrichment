@@ -2,7 +2,6 @@ from scipy.stats import hypergeom
 
 import os
 
-import requests
 from django.core.management.base import BaseCommand
 import click
 
@@ -19,11 +18,9 @@ from src.download_data_lcrannotdb import LCRAnnotDBData
 
 def main():
     folder = "./data_res/"
-    new_folder = "./data_res_new/"
     files = os.listdir(folder)
     lcrannotdb_data = LCRAnnotDBData("", 0)
     all_proteins = lcrannotdb_data.protein_no
-    # all_proteins = Protein.objects.all().count()
     new_file_data = []
     for file in files:
         file_data = read_files(f"{folder}{file}")
