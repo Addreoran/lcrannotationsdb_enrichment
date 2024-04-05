@@ -4,29 +4,32 @@ import os
 
 import requests
 from django.core.management.base import BaseCommand
+import click
 
-from lcrannotationdb.models import Protein
 from statsmodels.stats.multitest import multipletests
+
+from src.download_data_lcrannotdb import LCRAnnotDBData
 
 
 # from scipy.stats import hypergeom
 
+@click.command()
+@click.option('--gt', default=70, help='The lowest value of LCR and annotation coverage.')
+@click.option('--path', default="", help='Path to folder with data about annotations.')
 
-class Command(BaseCommand):
-    # python manage.py initdb <seg_parameters>.
-    help = "Wywołaj to do obliczeni astatystyk."
-
-    def handle(self, *args, **options):
-        folder = "./data_res/"
-        new_folder = "./data_res_new/"
-        files = os.listdir(folder)
-        all_proteins = Protein.objects.all().count()
-        new_file_data = []
-        for file in files:
-            file_data = read_files(f"{folder}{file}")
-            new_file_data += count_hypergeom_all(file_data, all_proteins)
-        new_file_data = Benjamini_Hochberg(new_file_data)
-        save_to_files(new_file_data, f"./hypergeom_test_total.csv")
+def main():
+    folder = "./data_res/"
+    new_folder = "./data_res_new/"
+    files = os.listdir(folder)
+    lcrannotdb_data = LCRAnnotDBData("", 0)
+    all_proteins = lcrannotdb_data.protein_no
+    # all_proteins = Protein.objects.all().count()
+    new_file_data = []
+    for file in files:
+        file_data = read_files(f"{folder}{file}")
+        new_file_data += count_hypergeom_all(file_data, all_proteins)
+    new_file_data = Benjamini_Hochberg(new_file_data)
+    save_to_files(new_file_data, f"./hypergeom_test_total.csv")
 
 
 def Benjamini_Hochberg(data):
@@ -34,7 +37,6 @@ def Benjamini_Hochberg(data):
     p_values = {i[12] for i in data}
     result_total = {}
     pvals_test = list(p_values)
-    # todo sprawdzić czy pvals ma różne wartości
     if pvals_test:
         rest = multipletests(pvals=pvals_test, alpha=significance, method="fdr_bh")
         print(rest)
