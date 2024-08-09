@@ -1,0 +1,73 @@
+Accession	Source Database	Name	Tax ID	Tax Name	Length	Entry Accession	Matches
+O12161	reviewed	Protein Tat	388812	Human immunodeficiency virus type 1 group M subtype C (isolate 92BR025)	101	IPR001831	1..86
+O41801	reviewed	Protein Tat	388825	Human immunodeficiency virus type 1 group M subtype G (isolate 92NG083)	101	IPR001831	1..86
+O70889	reviewed	Protein Tat	388814	Human immunodeficiency virus type 1 group M subtype F1 (isolate 93BR020)	99	IPR001831	1..86
+O70899	reviewed	Protein Tat	388826	Human immunodeficiency virus type 1 group M subtype H (isolate 90CF056)	99	IPR001831	1..86
+O89943	reviewed	Protein Tat	388824	Human immunodeficiency virus type 1 group M subtype G (isolate SE6165)	101	IPR001831	1..86
+O91083	reviewed	Protein Tat	388818	Human immunodeficiency virus type 1 group N (isolate YBF30)	101	IPR001831	1..86
+P04326	reviewed	Protein Tat	11679	Human immunodeficiency virus type 1 group M subtype B (isolate PCV12)	86	IPR001831	1..86
+P04605	reviewed	Protein Tat	11720	Human immunodeficiency virus type 2 subtype A (isolate ROD)	130	IPR001831	45..93
+P04608	reviewed	Protein Tat	11706	Human immunodeficiency virus type 1 group M subtype B (isolate HXB2)	86	IPR001831	1..86
+P04609	reviewed	Protein Tat	11708	Human immunodeficiency virus type 1 group M subtype D (isolate Z6)	86	IPR001831	1..86
+P04610	reviewed	Protein Tat	11686	Human immunodeficiency virus type 1 group M subtype B (isolate BRU/LAI)	86	IPR001831	1..86
+P04611	reviewed	Protein Tat	11689	Human immunodeficiency virus type 1 group M subtype D (isolate ELI)	99	IPR001831	1..86
+P04612	reviewed	Protein Tat	11682	Human immunodeficiency virus type 1 group M subtype B (isolate BH5)	58	IPR001831	2..58
+P04613	reviewed	Protein Tat	11697	Human immunodeficiency virus type 1 group M subtype A (isolate MAL)	87	IPR001831	1..87
+P04614	reviewed	Protein Tat	11685	Human immunodeficiency virus type 1 group M subtype B (isolate ARV2/SF2)	101	IPR001831	1..86
+P05905	reviewed	Protein Tat	11696	Human immunodeficiency virus type 1 group M subtype B (isolate MN)	101	IPR001831	1..86
+P05906	reviewed	Protein Tat	11702	Human immunodeficiency virus type 1 group M subtype B (isolate SC)	101	IPR001831	1..86
+P05907	reviewed	Protein Tat	11687	Human immunodeficiency virus type 1 group M subtype B (isolate CDC-451)	101	IPR001831	1..86
+P05908	reviewed	Protein Tat	11701	Human immunodeficiency virus type 1 group M subtype B (isolate RF/HAT3)	102	IPR001831	1..86
+P05909	reviewed	Protein Tat	11719	Human immunodeficiency virus type 2 subtype A (isolate NIH-Z)	130	IPR001831	45..93
+P05910	reviewed	Protein Tat	11735	Simian immunodeficiency virus (isolate K6W)	131	IPR001831	45..97
+P05911	reviewed	Protein Tat	11733	Simian immunodeficiency virus (isolate Mm142-83)	130	IPR001831	45..97
+P05913	reviewed	Protein Tat	11731	Simian immunodeficiency virus agm.vervet (isolate AGM TYO-1)	100	IPR001831	21..61
+P0C1J9	reviewed	Protein Tat	388815	Human immunodeficiency virus type 1 group M subtype F2 (isolate MP255)	99	IPR001831	1..86
+P0C1K0	reviewed	Protein Tat	388823	Human immunodeficiency virus type 1 group M subtype F2 (isolate MP257)	101	IPR001831	1..86
+P0C1K1	reviewed	Protein Tat	327105	Human immunodeficiency virus type 1 group O (isolate ANT70)	114	IPR001831	1..84
+P0C1K2	reviewed	Protein Tat	388816	Human immunodeficiency virus type 1 group O (isolate MVP5180)	112	IPR001831	1..85
+P0C1K3	reviewed	Protein Tat	388907	Human immunodeficiency virus type 1 group M subtype K (isolate 97ZR-EQTB11)	99	IPR001831	1..86
+P0C1K4	reviewed	Protein Tat	388906	Human immunodeficiency virus type 1 group M subtype K (isolate 96CM-MP535)	101	IPR001831	1..86
+P11263	reviewed	Protein Tat	11736	Simian immunodeficiency virus (isolate K78)	106	IPR001831	20..72
+P12453	reviewed	Protein Tat	11718	Human immunodeficiency virus type 2 subtype A (isolate SBLISY)	130	IPR001831	45..93
+P12506	reviewed	Protein Tat	11683	Human immunodeficiency virus type 1 group M subtype D (isolate Z2/CDC-Z34)	86	IPR001831	1..86
+P12513	reviewed	Protein Tat	11737	Simian immunodeficiency virus (isolate F236/smH4)	117	IPR001831	30..83
+P15835	reviewed	Protein Tat	11716	Human immunodeficiency virus type 2 subtype B (isolate D205)	97	IPR001831	45..95
+P17285	reviewed	Protein Tat	402771	Simian immunodeficiency virus (isolate CPZ GAB1)	100	IPR001831	1..87
+P17759	reviewed	Protein Tat	11713	Human immunodeficiency virus type 2 subtype A (isolate D194)	130	IPR001831	45..93
+P18044	reviewed	Protein Tat	11717	Human immunodeficiency virus type 2 subtype A (isolate Ghana-1)	130	IPR001831	45..93
+P18098	reviewed	Protein Tat	11714	Human immunodeficiency virus type 2 subtype A (isolate BEN)	130	IPR001831	46..93
+P18804	reviewed	Protein Tat	11695	Human immunodeficiency virus type 1 group M subtype D (isolate NDK)	86	IPR001831	1..86
+P19507	reviewed	Protein Tat	11738	Simian immunodeficiency virus (isolate PBj14/BCL-3)	128	IPR001831	45..95
+P19552	reviewed	Protein Tat	11690	Human immunodeficiency virus type 1 group M subtype B (isolate SF33)	101	IPR001831	1..86
+P19553	reviewed	Protein Tat	11691	Human immunodeficiency virus type 1 group M subtype B (isolate SF162)	101	IPR001831	1..86
+P19564	reviewed	Protein Tat	417296	Bovine immunodeficiency virus (strain R29)	103	IPR001831	32..73,75..91
+P20879	reviewed	Protein Tat	11688	Human immunodeficiency virus type 1 group M subtype B (isolate JRCSF)	101	IPR001831	1..86
+P20880	reviewed	Protein Tat	11721	Human immunodeficiency virus type 2 subtype A (isolate ST)	130	IPR001831	44..93
+P20893	reviewed	Protein Tat	11699	Human immunodeficiency virus type 1 group M subtype B (isolate OYI)	101	IPR001831	1..86
+P20920	reviewed	Protein Tat	11672	Equine infectious anemia virus (strain Wyoming)	75	IPR001831	33..67
+P22384	reviewed	Protein Tat	11732	Simian immunodeficiency virus (isolate GB1)	115	IPR001831	31..68
+P24109	reviewed	Protein Tat	11715	Human immunodeficiency virus type 2 subtype A (isolate CAM2)	133	IPR001831	48..100
+P24738	reviewed	Protein Tat	11703	Human immunodeficiency virus type 1 group M subtype A (isolate U455)	101	IPR001831	1..86
+P27975	reviewed	Protein Tat	11727	Simian immunodeficiency virus agm.vervet (isolate AGM155)	119	IPR001831	21..60
+P27982	reviewed	Protein Tat	11730	Simian immunodeficiency virus agm.vervet (isolate AGM3)	119	IPR001831	22..60
+P32544	reviewed	Protein Tat	31675	Equine infectious anemia virus (isolate CL22)	75	IPR001831	33..67
+P35965	reviewed	Protein Tat	362651	Human immunodeficiency virus type 1 group M subtype B (isolate YU-2)	101	IPR001831	1..86
+P36340	reviewed	Protein Tat	36378	Simian immunodeficiency virus (isolate African mandrill)	116	IPR001831	31..68
+P69697	reviewed	Protein Tat	11678	Human immunodeficiency virus type 1 group M subtype B (isolate BH10)	86	IPR001831	1..86
+P69698	reviewed	Protein Tat	11707	Human immunodeficiency virus type 1 group M subtype B (isolate HXB3)	86	IPR001831	1..86
+Q02838	reviewed	Protein Tat	31684	Simian immunodeficiency virus agm.grivet (isolate AGM gr-1)	94	IPR001831	15..65
+Q1A246	reviewed	Protein Tat	388912	Simian immunodeficiency virus (isolate EK505)	93	IPR001831	1..86
+Q1A264	reviewed	Protein Tat	388911	Simian immunodeficiency virus (isolate MB66)	101	IPR001831	1..86
+Q73370	reviewed	Protein Tat	401671	Human immunodeficiency virus type 1 group M subtype B (strain 89.6)	100	IPR001831	1..85
+Q74124	reviewed	Protein Tat	73484	Human immunodeficiency virus type 2 subtype A (isolate KR)	130	IPR001831	45..97
+Q75005	reviewed	Protein Tat	388796	Human immunodeficiency virus type 1 group M subtype C (isolate ETH2220)	42	IPR001831	2..42
+Q76632	reviewed	Protein Tat	388822	Human immunodeficiency virus type 2 subtype B (isolate UC1)	128	IPR001831	45..95
+Q82854	reviewed	Protein Tat	36370	Jembrana disease virus	114	IPR001831	30..73
+Q89745	reviewed	Protein Tat	388821	Human immunodeficiency virus type 2 subtype B (isolate EHO)	138	IPR001831	44..95
+Q8AIH8	reviewed	Protein Tat	388910	Simian immunodeficiency virus (isolate TAN1)	136	IPR001831	2..65
+Q9IDV5	reviewed	Protein Tat	388819	Human immunodeficiency virus type 1 group N (isolate YBF106)	102	IPR001831	1..87
+Q9Q717	reviewed	Protein Tat	388888	Human immunodeficiency virus type 1 group M subtype H (isolate VI991)	86	IPR001831	1..86
+Q9QSR0	reviewed	Protein Tat	388813	Human immunodeficiency virus type 1 group M subtype F1 (isolate VI850)	101	IPR001831	1..86
+Q9WC57	reviewed	Protein Tat	388905	Human immunodeficiency virus type 1 group M subtype J (isolate SE9280)	101	IPR001831	1..86
+Q9WC66	reviewed	Protein Tat	388904	Human immunodeficiency virus type 1 group M subtype J (isolate SE9173)	101	IPR001831	1..86

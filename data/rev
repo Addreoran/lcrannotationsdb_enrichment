@@ -1,0 +1,75 @@
+Accession	Source Database	Name	Tax ID	Tax Name	Length	Entry Accession	Matches
+O12162	reviewed	Protein Rev	388812	Human immunodeficiency virus type 1 group M subtype C (isolate 92BR025)	107	IPR000625	1..107
+O41802	reviewed	Protein Rev	388825	Human immunodeficiency virus type 1 group M subtype G (isolate 92NG083)	123	IPR000625	1..107
+O70890	reviewed	Protein Rev	388814	Human immunodeficiency virus type 1 group M subtype F1 (isolate 93BR020)	116	IPR000625	1..107
+O70900	reviewed	Protein Rev	388826	Human immunodeficiency virus type 1 group M subtype H (isolate 90CF056)	116	IPR000625	1..107
+O91084	reviewed	Protein Rev	388818	Human immunodeficiency virus type 1 group N (isolate YBF30)	104	IPR000625	1..104
+P04325	reviewed	Protein Rev	11679	Human immunodeficiency virus type 1 group M subtype B (isolate PCV12)	116	IPR000625	1..107
+P04615	reviewed	Protein Rev	11720	Human immunodeficiency virus type 2 subtype A (isolate ROD)	100	IPR000625	1..91
+P04616	reviewed	Protein Rev	11678	Human immunodeficiency virus type 1 group M subtype B (isolate BH10)	116	IPR000625	1..107
+P04618	reviewed	Protein Rev	11706	Human immunodeficiency virus type 1 group M subtype B (isolate HXB2)	116	IPR000625	1..107
+P04619	reviewed	Protein Rev	11708	Human immunodeficiency virus type 1 group M subtype D (isolate Z6)	116	IPR000625	1..107
+P04620	reviewed	Protein Rev	11686	Human immunodeficiency virus type 1 group M subtype B (isolate BRU/LAI)	116	IPR000625	1..107
+P04621	reviewed	Protein Rev	11689	Human immunodeficiency virus type 1 group M subtype D (isolate ELI)	118	IPR000625	1..107
+P04622	reviewed	Protein Rev	11697	Human immunodeficiency virus type 1 group M subtype A (isolate MAL)	117	IPR000625	1..108
+P04623	reviewed	Protein Rev	11685	Human immunodeficiency virus type 1 group M subtype B (isolate ARV2/SF2)	116	IPR000625	1..107
+P05864	reviewed	Protein Rev	11684	Human immunodeficiency virus type 1 group M subtype B (isolate BH8)	106	IPR000625	1..97
+P05865	reviewed	Protein Rev	11687	Human immunodeficiency virus type 1 group M subtype B (isolate CDC-451)	116	IPR000625	1..107
+P05866	reviewed	Protein Rev	11705	Human immunodeficiency virus type 1 group M subtype B (isolate WMJ22)	90	IPR000625	1..65
+P05867	reviewed	Protein Rev	11680	Human immunodeficiency virus type 1 group M subtype U (isolate Z3)	86	IPR000625	1..65
+P05868	reviewed	Protein Rev	11692	Human immunodeficiency virus type 1 group M subtype A (isolate Z321)	90	IPR000625	1..64
+P05869	reviewed	Protein Rev	11681	Human immunodeficiency virus type 1 group M subtype D (isolate Z84)	90	IPR000625	1..65
+P05870	reviewed	Protein Rev	11701	Human immunodeficiency virus type 1 group M subtype B (isolate RF/HAT3)	116	IPR000625	1..107
+P05871	reviewed	Protein Rev	11696	Human immunodeficiency virus type 1 group M subtype B (isolate MN)	115	IPR000625	1..106
+P05872	reviewed	Protein Rev	11702	Human immunodeficiency virus type 1 group M subtype B (isolate SC)	116	IPR000625	1..107
+P05873	reviewed	Protein Rev	11719	Human immunodeficiency virus type 2 subtype A (isolate NIH-Z)	107	IPR000625	1..91
+P05875	reviewed	Protein Rev	11733	Simian immunodeficiency virus (isolate Mm142-83)	107	IPR000625	2..90
+P05876	reviewed	Protein Rev	11731	Simian immunodeficiency virus agm.vervet (isolate AGM TYO-1)	84	IPR000625	8..81
+P08809	reviewed	Protein Rev	11734	Simian immunodeficiency virus (isolate Mm251)	37	IPR000625	2..35
+P0C1L1	reviewed	Protein Rev	388823	Human immunodeficiency virus type 1 group M subtype F2 (isolate MP257)	116	IPR000625	1..107
+P0C1L2	reviewed	Protein Rev	388815	Human immunodeficiency virus type 1 group M subtype F2 (isolate MP255)	116	IPR000625	1..107
+P0C1L3	reviewed	Protein Rev	388816	Human immunodeficiency virus type 1 group O (isolate MVP5180)	103	IPR000625	1..103
+P0C1L4	reviewed	Protein Rev	327105	Human immunodeficiency virus type 1 group O (isolate ANT70)	102	IPR000625	1..102
+P0C1L5	reviewed	Protein Rev	388907	Human immunodeficiency virus type 1 group M subtype K (isolate 97ZR-EQTB11)	116	IPR000625	1..107
+P0C1L6	reviewed	Protein Rev	388906	Human immunodeficiency virus type 1 group M subtype K (isolate 96CM-MP535)	116	IPR000625	1..107
+P0C1L7	reviewed	Protein Rev	388824	Human immunodeficiency virus type 1 group M subtype G (isolate SE6165)	107	IPR000625	1..107
+P12448	reviewed	Protein Rev	11718	Human immunodeficiency virus type 2 subtype A (isolate SBLISY)	168	IPR000625	1..89
+P12483	reviewed	Protein Rev	11683	Human immunodeficiency virus type 1 group M subtype D (isolate Z2/CDC-Z34)	118	IPR000625	1..107
+P12484	reviewed	Protein Rev	11694	Human immunodeficiency virus type 1 group M subtype B (isolate JH32)	113	IPR000625	4..104
+P12485	reviewed	Protein Rev	11693	Human immunodeficiency virus type 1 group M subtype B (isolate BRVA)	106	IPR000625	1..97
+P12486	reviewed	Protein Rev	11737	Simian immunodeficiency virus (isolate F236/smH4)	101	IPR000625	4..88
+P15830	reviewed	Protein Rev	11716	Human immunodeficiency virus type 2 subtype B (isolate D205)	153	IPR000625	5..87
+P17280	reviewed	Protein Rev	402771	Simian immunodeficiency virus (isolate CPZ GAB1)	124	IPR000625	1..108
+P17754	reviewed	Protein Rev	11713	Human immunodeficiency virus type 2 subtype A (isolate D194)	103	IPR000625	1..91
+P18039	reviewed	Protein Rev	11717	Human immunodeficiency virus type 2 subtype A (isolate Ghana-1)	103	IPR000625	1..91
+P18093	reviewed	Protein Rev	11714	Human immunodeficiency virus type 2 subtype A (isolate BEN)	103	IPR000625	1..91
+P18803	reviewed	Protein Rev	11695	Human immunodeficiency virus type 1 group M subtype D (isolate NDK)	116	IPR000625	1..107
+P19502	reviewed	Protein Rev	11738	Simian immunodeficiency virus (isolate PBj14/BCL-3)	100	IPR000625	4..87
+P19547	reviewed	Protein Rev	11690	Human immunodeficiency virus type 1 group M subtype B (isolate SF33)	116	IPR000625	1..107
+P19548	reviewed	Protein Rev	11691	Human immunodeficiency virus type 1 group M subtype B (isolate SF162)	116	IPR000625	1..107
+P20869	reviewed	Protein Rev	11688	Human immunodeficiency virus type 1 group M subtype B (isolate JRCSF)	116	IPR000625	1..107
+P20870	reviewed	Protein Rev	11721	Human immunodeficiency virus type 2 subtype A (isolate ST)	107	IPR000625	1..91
+P20887	reviewed	Protein Rev	11699	Human immunodeficiency virus type 1 group M subtype B (isolate OYI)	116	IPR000625	1..107
+P24104	reviewed	Protein Rev	11715	Human immunodeficiency virus type 2 subtype A (isolate CAM2)	100	IPR000625	1..89
+P24739	reviewed	Protein Rev	11703	Human immunodeficiency virus type 1 group M subtype A (isolate U455)	123	IPR000625	1..107
+P27971	reviewed	Protein Rev	11727	Simian immunodeficiency virus agm.vervet (isolate AGM155)	89	IPR000625	8..87
+P27981	reviewed	Protein Rev	11730	Simian immunodeficiency virus agm.vervet (isolate AGM3)	89	IPR000625	8..87
+P35960	reviewed	Protein Rev	362651	Human immunodeficiency virus type 1 group M subtype B (isolate YU-2)	116	IPR000625	1..107
+P69718	reviewed	Protein Rev	11707	Human immunodeficiency virus type 1 group M subtype B (isolate HXB3)	116	IPR000625	1..107
+P69733	reviewed	Protein Rev	11735	Simian immunodeficiency virus (isolate K6W)	108	IPR000625	3..91
+P69734	reviewed	Protein Rev	11736	Simian immunodeficiency virus (isolate K78)	108	IPR000625	3..91
+Q02839	reviewed	Protein Rev	31684	Simian immunodeficiency virus agm.grivet (isolate AGM gr-1)	147	IPR000625	8..86
+Q1A245	reviewed	Protein Rev	388912	Simian immunodeficiency virus (isolate EK505)	103	IPR000625	1..103
+Q1A263	reviewed	Protein Rev	388911	Simian immunodeficiency virus (isolate MB66)	123	IPR000625	1..107
+Q70624	reviewed	Protein Rev	82834	Human immunodeficiency virus type 1 group M subtype B (isolate LW123)	118	IPR000625	1..109
+Q73371	reviewed	Protein Rev	401671	Human immunodeficiency virus type 1 group M subtype B (strain 89.6)	116	IPR000625	1..107
+Q74125	reviewed	Protein Rev	73484	Human immunodeficiency virus type 2 subtype A (isolate KR)	179	IPR000625	1..91
+Q74232	reviewed	Protein Rev	388821	Human immunodeficiency virus type 2 subtype B (isolate EHO)	150	IPR000625	5..87
+Q75006	reviewed	Protein Rev	388796	Human immunodeficiency virus type 1 group M subtype C (isolate ETH2220)	107	IPR000625	1..107
+Q76631	reviewed	Protein Rev	388822	Human immunodeficiency virus type 2 subtype B (isolate UC1)	150	IPR000625	5..87
+Q8AIH7	reviewed	Protein Rev	388910	Simian immunodeficiency virus (isolate TAN1)	105	IPR000625	1..88
+Q9IDV4	reviewed	Protein Rev	388819	Human immunodeficiency virus type 1 group N (isolate YBF106)	105	IPR000625	1..105
+Q9Q716	reviewed	Protein Rev	388888	Human immunodeficiency virus type 1 group M subtype H (isolate VI991)	116	IPR000625	1..107
+Q9QSQ9	reviewed	Protein Rev	388813	Human immunodeficiency virus type 1 group M subtype F1 (isolate VI850)	116	IPR000625	1..107
+Q9WC58	reviewed	Protein Rev	388905	Human immunodeficiency virus type 1 group M subtype J (isolate SE9280)	116	IPR000625	1..107
+Q9WC67	reviewed	Protein Rev	388904	Human immunodeficiency virus type 1 group M subtype J (isolate SE9173)	116	IPR000625	1..107

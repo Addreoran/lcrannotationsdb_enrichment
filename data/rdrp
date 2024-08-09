@@ -1,0 +1,58 @@
+Accession	Source Database	Name	Tax ID	Tax Name	Length	Entry Accession	Matches
+O39927	reviewed	Genome polyprotein	356420	Hepatitis C virus genotype 6a (isolate EUHK2)	3018	IPR002166	2430..2940
+O39928	reviewed	Genome polyprotein	356419	Hepatitis C virus genotype 5a (isolate EUH1480)	3014	IPR002166	2426..2936
+O39929	reviewed	Genome polyprotein	356418	Hepatitis C virus genotype 4a (isolate ED43)	3008	IPR002166	2420..2930
+O91936	reviewed	Genome polyprotein	356390	Hepatitis C virus genotype 5a (isolate SA13)	3014	IPR002166	2426..2936
+O92529	reviewed	Genome polyprotein	356421	Hepatitis C virus genotype 6b (isolate Th580)	3019	IPR002166	2431..2941
+O92530	reviewed	Genome polyprotein	356422	Hepatitis C virus genotype 6d (isolate VN235)	3013	IPR002166	2425..2935
+O92531	reviewed	Genome polyprotein	356425	Hepatitis C virus genotype 6k (isolate VN405)	3016	IPR002166	2428..2938
+O92532	reviewed	Genome polyprotein	356424	Hepatitis C virus genotype 6h (isolate VN004)	3015	IPR002166	2427..2937
+O92972	reviewed	Genome polyprotein	420174	Hepatitis C virus genotype 1b (strain HC-J4)	3010	IPR002166	2422..2932
+P04518	reviewed	RNA-directed RNA polymerase	11986	Carnation mottle virus	763	IPR002166	271..742
+P09505	reviewed	Putative RNA-directed RNA polymerase	2169986	Barley yellow dwarf virus (isolate PAV)	867	IPR002166	362..839
+P11640	reviewed	RNA-directed RNA polymerase	882210	Maize chlorotic mottle virus (isolate United States/Kansas/1987)	965	IPR002166	463..939
+P15187	reviewed	RNA-directed RNA polymerase	12143	Cucumber necrosis virus	818	IPR002166	327..798
+P15962	reviewed	RNA-directed RNA polymerase	12147	Tomato bushy stunt virus (strain Cherry)	818	IPR002166	326..798
+P17459	reviewed	RNA-directed RNA polymerase	12144	Cymbidium ringspot virus	818	IPR002166	326..798
+P17460	reviewed	RNA-directed RNA polymerase	11988	Turnip crinkle virus	775	IPR002166	272..751
+P19711	reviewed	Genome polyprotein	11100	Bovine viral diarrhea virus (isolate NADL)	3988	IPR002166	3550..3774
+P19712	reviewed	Genome polyprotein	11097	Classical swine fever virus (strain Alfort)	3898	IPR002166	3460..3693
+P21530	reviewed	Genome polyprotein	11098	Classical swine fever virus (strain Brescia)	3898	IPR002166	3460..3692
+P22956	reviewed	RNA-directed RNA polymerase	12267	Red clover necrotic mosaic virus	767	IPR002166	263..744
+P22958	reviewed	RNA-directed RNA polymerase	12055	Tobacco necrosis virus (strain A)	724	IPR002166	225..702
+P26660	reviewed	Genome polyprotein	11113	Hepatitis C virus genotype 2a (isolate HC-J6)	3033	IPR002166	2445..2955
+P26661	reviewed	Genome polyprotein	11115	Hepatitis C virus genotype 2b (isolate HC-J8)	3033	IPR002166	2445..2955
+P26662	reviewed	Genome polyprotein	11116	Hepatitis C virus genotype 1b (isolate Japanese)	3010	IPR002166	2422..2932
+P26663	reviewed	Genome polyprotein	11105	Hepatitis C virus genotype 1b (isolate BK)	3010	IPR002166	2422..2932
+P26664	reviewed	Genome polyprotein	11104	Hepatitis C virus genotype 1a (isolate 1)	3011	IPR002166	2423..2932
+P27209	reviewed	RNA-directed RNA polymerase	12056	Tobacco necrosis virus (strain D)	725	IPR002166	224..708
+P27958	reviewed	Genome polyprotein	63746	Hepatitis C virus genotype 1a (isolate H77)	3011	IPR002166	2423..2932
+P29044	reviewed	Putative RNA-directed RNA polymerase	2169984	Barley yellow dwarf virus (isolate MAV)	867	IPR002166	362..839
+P29045	reviewed	Putative RNA-directed RNA polymerase	31724	Barley yellow dwarf virus (isolate P-PAV)	867	IPR002166	362..839
+P29846	reviewed	Genome polyprotein	31645	Hepatitis C virus genotype 1b (isolate Taiwan)	3010	IPR002166	2422..2932
+P89034	reviewed	RNA-directed RNA polymerase	652599	Panicum mosaic virus (strain United States/Kansas 109S)	992	IPR002166	449..936
+Q00269	reviewed	Genome polyprotein	31642	Hepatitis C virus genotype 1b (isolate HC-JT)	3010	IPR002166	2422..2932
+Q01499	reviewed	Genome polyprotein	31656	Bovine viral diarrhea virus (strain SD-1)	3898	IPR002166	3458..3688
+Q03463	reviewed	Genome polyprotein	421877	Hepatitis C virus genotype 1b (isolate HC-J1)	3011	IPR002166	2423..2932
+Q5I2N3	reviewed	Genome polyprotein	356391	Hepatitis C virus genotype 6a (isolate 6a33)	3019	IPR002166	2431..2941
+Q66096	reviewed	RNA-directed RNA polymerase	652597	Carnation ringspot virus (isolate Lommel)	769	IPR002166	266..742
+Q67683	reviewed	RNA-directed RNA polymerase	1005060	Groundnut rosette virus (strain MC1)	839	IPR002166	314..773
+Q68749	reviewed	Genome polyprotein	356413	Hepatitis C virus genotype 2c (isolate BEBE1)	3037	IPR002166	2449..2959
+Q68798	reviewed	Genome polyprotein	356423	Hepatitis C virus genotype 6g (isolate JK046)	3022	IPR002166	2434..2944
+Q68801	reviewed	Genome polyprotein	356417	Hepatitis C virus genotype 3k (isolate JK049)	3019	IPR002166	2431..2941
+Q69422	reviewed	Genome polyprotein	2847087	Hepatitis GB virus B	2864	IPR002166	2277..2783
+Q81258	reviewed	Genome polyprotein	356415	Hepatitis C virus genotype 3a (isolate NZL1)	3021	IPR002166	2433..2943
+Q81487	reviewed	Genome polyprotein	357355	Hepatitis C virus genotype 3b (isolate Tr-Kj)	3023	IPR002166	2435..2945
+Q81495	reviewed	Genome polyprotein	356416	Hepatitis C virus genotype 3a (isolate k3a)	3021	IPR002166	2433..2943
+Q81754	reviewed	Genome polyprotein	356410	Hepatitis C virus genotype 1c (isolate HC-G9)	3011	IPR002166	2423..2933
+Q83424	reviewed	RNA-directed RNA polymerase	11987	Melon necrotic spot virus	791	IPR002166	290..771
+Q83927	reviewed	RNA-directed RNA polymerase	652110	Oat chlorotic stunt virus (isolate United Kingdom)	752	IPR002166	238..732
+Q913D4	reviewed	Genome polyprotein	356386	Hepatitis C virus genotype 1c (isolate India)	3011	IPR002166	2423..2933
+Q913V3	reviewed	Genome polyprotein	421879	Hepatitis C virus genotype 1b (isolate HCR6)	3010	IPR002166	2422..2932
+Q96662	reviewed	Genome polyprotein	268305	Bovine viral diarrhea virus (strain CP7)	3907	IPR002166	3468..3697
+Q99IB8	reviewed	Genome polyprotein	356411	Hepatitis C virus genotype 2a (isolate JFH-1)	3033	IPR002166	2445..2955
+Q9DHD6	reviewed	Genome polyprotein	356412	Hepatitis C virus genotype 2b (isolate JPUT971017)	3033	IPR002166	2445..2955
+Q9IWA0	reviewed	RNA-directed RNA polymerase	652109	Pothos latent virus (isolate Pigeonpea/India)	739	IPR002166	251..720
+Q9J5U7	reviewed	Probable RNA-directed RNA polymerase	652111	Carnation mottle virus (isolate China/Shanghai)	763	IPR002166	270..742
+Q9QAX1	reviewed	Genome polyprotein	356414	Hepatitis C virus genotype 2k (isolate VAT96)	3033	IPR002166	2445..2955
+Q9WMX2	reviewed	Genome polyprotein	333284	Hepatitis C virus genotype 1b (isolate Con1)	3010	IPR002166	2422..2932
