@@ -25,4 +25,4 @@ $pip install -r requirements.txt
 ```
 In case of our analysis, we used parameter --gt greater then 70%. It means that in this analysis, there are used only annotations that are covered with and covers LCRs in more then 70%. Parameter --path "path_to_save_tmp_files" requires path to empty folder.
 
-File "family_GO_analyse.py" needs data folder that contains rows downloaded from InterPro database to families RdRp, REV and Tat. Input files used in our analyses are attached in data folder.
+The file 'family_GO_analyse.py' requires a data folder containing rows downloaded from the InterPro database for the families RdRp, REV, and Tat. The input files used in our analyses are included in the data folder.
