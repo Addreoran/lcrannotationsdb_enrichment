@@ -37,14 +37,14 @@ def main(gt, path):
                     all_data[annotation["UniprotID"]] = {"annotations": set(), "family": set()}
                 if annotation["SourceID"] is None:
                     all_data[annotation["UniprotID"]]["annotations"].add(
-                        f"{annotation["SourceName"]}={annotation["Name"]}")
+                        f"{annotation['SourceName']}={annotation['Name']}")
                 else:
                     if annotation["SourceID"] != annotation["UniprotID"]:
                         all_data[annotation["UniprotID"]]["annotations"].add(
                             annotation["SourceID"])
                     else:
                         all_data[annotation["UniprotID"]]["annotations"].add(
-                            f"{annotation["SourceName"]}={annotation["Name"]}")
+                            f"{annotation['SourceName']}={annotation['Name']}")
             else:
                 print("brak Uniprotid", annotation["pk"])
         nr_all_data = len(all_data)
