@@ -75,8 +75,8 @@ requirements.txt).
 
 # Setup and run
 
-This project was implemented in linux dystrybution and we present only setup with pip package. To run this analysis, run
-following steps:
+This project was implemented in the Linux distribution and we present only the setup with the pip package. To perform this analysis
+the following steps:
 
 1. Install Python
 
@@ -93,18 +93,19 @@ $pip install -r requirements.txt
 
 3. Run analysis - shortcut
 
-Here you can see general commands to run scripts from this project. In order to see more detailed description of run analysis, see [Description](#description) chapter.
+Here you can see general commands to execute scripts from this project. To see a more detailed description of the execution analysis, see the [Description](#description) chapter.
+
 ```
  $python3 ./src/download_interpro_families.py --gt 70"
  $python3 ./src/count_hypergeom.py --gt 70"
  $python3 ./src/famiLy_GO_analyse.py
 ```
 
-In case of our analysis, we used parameter --gt greater then 70%. It means that in this analysis, there are used only
-annotations that are covered with and covers LCRs in more then 70%. 
+In the case of our analysis, we used the parameter --gt greater than 70%. It means that in this analysis only
+annotations that are covered by LCRs in more than 70%. 
 
-The file './src/family_GO_analyse.py' requires a data folder containing rows downloaded from the InterPro database for the
-families RdRp, REV, and Tat. The input files used in our analyses are included in the data folder.
+The file './src/family_GO_analyse.py' requires a data folder containing rows from the InterPro database for the
+RdRp, REV, and Tat families. The input files used in our analyses are included in the data folder.
 
 
 
