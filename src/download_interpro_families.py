@@ -1,11 +1,11 @@
 import os
-
+import logging
 import requests
 
 import click
 
 from download_data_lcrannotdb import LCRAnnotDBData
-
+logger = logging.getLogger(__name__)
 
 @click.command()
 @click.option('--gt', default=70, help='The lowest value of LCR and annotation coverage.')
@@ -14,43 +14,46 @@ def main(gt, path):
     lcrannotdb_data = LCRAnnotDBData(gt)
     category_once = lcrannotdb_data.get_categories_pk_list()
     biggest_cat = {}
+    cat_no=len(category_once)
     for e, category_pk in enumerate(category_once):
+        logger.info(f"Left to download: {cat_no-e} categories")
         annotations = lcrannotdb_data.get_annotations_category(category_pk)
         biggest_cat[category_pk] = len(annotations)
     tmp_families_per_protein = read_tmp_data("tmp_families_per_protein.csv")
     tmp_families_proteins = read_tmp_data("tmp_families_proteins.csv")
     meaning_result = []
-    if not os.path.exists("./data_res_proteins/"):
-        os.mkdir("./data_res_proteins/")
     if not os.path.exists("./data_res/"):
         os.mkdir("./data_res/")
     for category_pk in sorted(biggest_cat.items(), key=lambda x: x[1], reverse=True):
+        logger.info(f"Analyse Category ID: {category_pk}")
         all_data = {}
         category_pk = category_pk[0]
         annotations = lcrannotdb_data.get_annotations_category(category_pk)
-        print("annotations")
         ann_nr = len(annotations)
         for e, annotation in enumerate(annotations):
-            print(e, ann_nr)
-            if annotation["UniprotID"]:
-                if annotation["UniprotID"] not in all_data:
-                    all_data[annotation["UniprotID"]] = {"annotations": set(), "family": set()}
-                if annotation["SourceID"] is None:
-                    all_data[annotation["UniprotID"]]["annotations"].add(
+            #print(e, ann_nr, annotation)
+            if "UniprotID" in annotation:
+                if annotation["UniprotID"]:
+                    if annotation["UniprotID"] not in all_data:
+                        all_data[annotation["UniprotID"]] = {"annotations": set(), "family": set()}
+                    if annotation["SourceID"] is None:
+                        all_data[annotation["UniprotID"]]["annotations"].add(
                         f"{annotation['SourceName']}={annotation['Name']}")
-                else:
-                    if annotation["SourceID"] != annotation["UniprotID"]:
-                        all_data[annotation["UniprotID"]]["annotations"].add(
-                            annotation["SourceID"])
                     else:
-                        all_data[annotation["UniprotID"]]["annotations"].add(
+                        if annotation["SourceID"] != annotation["UniprotID"]:
+                            all_data[annotation["UniprotID"]]["annotations"].add(
+                            annotation["SourceID"])
+                        else:
+                            all_data[annotation["UniprotID"]]["annotations"].add(
                             f"{annotation['SourceName']}={annotation['Name']}")
             else:
-                print("brak Uniprotid", annotation["pk"])
+                logger.info(f"Lack of UniProtACC {annotation['pk']}")
+                #print("brak Uniprotid", annotation["pk"])
         nr_all_data = len(all_data)
         counter_all_data = 0
         for protein, data_protein in all_data.items():
             counter_all_data += 1
+            #print(counter_all_data)
             if protein not in tmp_families_per_protein:
                 tmp_families_per_protein[protein] = get_interpro_family(protein)
                 all_data[protein]["family"] = tmp_families_per_protein[protein]
@@ -69,7 +72,7 @@ def main(gt, path):
         annotations_proteins = {}
         nr_merge = 0
         for protein, data_protein in all_data.items():
-            print(nr_merge, nr_all_data)
+            #print(nr_merge, nr_all_data)
             nr_merge += 1
             for annotation in all_data[protein]["annotations"]:
                 if annotation not in families_proteins:
@@ -80,14 +83,30 @@ def main(gt, path):
         nr_annot_len = len(annotations_proteins)
         for e, annotation in enumerate(annotations_proteins.keys()):
             if "IPR" in annotation:
-                print(nr_annot_len, e, annotation)
+                #print(nr_annot_len, e, annotation)
                 if annotation not in tmp_families_proteins:
                     tmp_families_proteins[annotation] = analyse_interpro_family(annotation)
                     annotations_proteins_interpro[annotation] = tmp_families_proteins[annotation]
                 else:
                     annotations_proteins_interpro[annotation] = tmp_families_proteins[annotation]
         res = []
-
+        for annotation, annot_proteins in annotations_proteins.items():
+            for family, family_proteins in families_proteins.items():
+                #print("pairs", annot_proteins & family_proteins, annot_proteins, family_proteins)
+                if len(annot_proteins & family_proteins) > 0:
+                    res.append([str(category_pk),
+                        str(lcrannotdb_data.get_category_name_by_pk(category_pk)),
+                        str(annotation),
+                        str(family),
+                        str(len(annot_proteins)),
+                        str(len(family_proteins)),
+                        str(len(annotations_proteins_interpro.get(annotation, []))),
+                        str(len(annot_proteins & family_proteins)),
+                        str(len(annot_proteins & family_proteins) / len(annot_proteins)),
+                        str(len(annot_proteins & family_proteins) / len(family_proteins)),
+                        str(len(annotations_proteins_interpro.get(annotation, [])) / len(annot_proteins)),
+                        str(len(annotations_proteins_interpro.get(annotation, [])) / len(family_proteins)),
+                        ])
         with open(f"./data_res/{str(lcrannotdb_data.get_category_name_by_pk(category_pk)).replace('/', '_')}",
                   "w") as f:
             f.write(f"category_pk.pk|"
@@ -107,7 +126,7 @@ def main(gt, path):
                     if i:
                         f.write("|".join(i))
                         f.write("\n")
-                        print("|".join(i))
+                        #print("|".join(i))
 
 
 
@@ -153,12 +172,12 @@ def analyse_interpro_family(interpro_family):
     family_proteins = set()
     request_url = f"https://www.ebi.ac.uk/interpro/api/protein/reviewed/entry/interpro/{interpro_family}?format=json"
     while request_url:
-        print(request_url)
+        #print(request_url)
         try:
             req = requests.get(
                 request_url)
         except Exception as e:
-            print(e)
+            #print(e)
             request_url = request_url
             continue
         request_url = None
@@ -196,7 +215,8 @@ def get_interpro_family(protein):
             req = requests.get(
                 request_url)
         except Exception as e:
-            print(e)
+            logger.error(f"Error in get InterPro Family for {protein} as {e}.")
+            #print(e)
             request_url = request_url
             continue
         request_url = None

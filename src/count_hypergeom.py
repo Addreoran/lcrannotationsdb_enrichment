@@ -2,12 +2,12 @@ from scipy.stats import hypergeom
 
 import os
 
-from django.core.management.base import BaseCommand
+
 import click
 
 from statsmodels.stats.multitest import multipletests
 
-from src.download_data_lcrannotdb import LCRAnnotDBData
+from download_data_lcrannotdb import LCRAnnotDBData
 
 
 # from scipy.stats import hypergeom
@@ -23,6 +23,7 @@ def main(gt):
     all_proteins = lcrannotdb_data.protein_no
     new_file_data = []
     for file in files:
+        #print(file)
         file_data = read_files(f"{folder}{file}")
         new_file_data += count_hypergeom_all(file_data, all_proteins)
     new_file_data = Benjamini_Hochberg(new_file_data)
@@ -36,7 +37,7 @@ def Benjamini_Hochberg(data):
     pvals_test = list(p_values)
     if pvals_test:
         rest = multipletests(pvals=pvals_test, alpha=significance, method="fdr_bh")
-        print(rest)
+        #print(rest)
 
     for e, i in enumerate(pvals_test):
         result_total[i] = [rest[0][e], rest[1][e], rest[1][e]<0.05]
@@ -79,3 +80,7 @@ def count_hypergeom(all_proteins, family_annotation_proteins, annotation_protein
     stat = hypergeom.sf(x - 1, M, k, N)  # (k, M, n, N)
 
     return [stat, stat<0.05, M, k, N, x]
+
+if __name__ == '__main__':
+        main()
+
