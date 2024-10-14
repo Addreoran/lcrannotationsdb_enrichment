@@ -15,21 +15,21 @@
 This repository contains code to generate data for publication "LCRAnnotationsDB: a database of low complexity regions
 functional and structural annotations":
 
-1. Appendix A - it contains data about enrichment of LCR annotations in protein families (see part 2.3 of manuscript),
+1. Appendix A - it contains data about enrichment of LCR annotations in protein families (see section 2.3 of manuscript),
 2. Appendix D - it contains data with Gene Ontologies of selected families with proteins enriched in low complexity
-   regions, these data are detailed described in part 3.1.1 of manuscript.
+   regions, these data are detailed described in section 3.1.1 of manuscript.
 
 ## Enrichment of LCR annotations in protein families
 
 First, the user needs to download information about InterPro Families from the InterPro database. 
-To get it, it is necessary to run the script "download_interpro_families.py". It needs parameters "gt" to 
+To get it, it is necessary to run the script "./src/download_interpro_families.py". It needs parameters "--gt" to 
 to obtain families of only proteins with categories with annotations covering all LCRs with value greater 
-than parameter gt and vice versa. In the case of the analyses in the manuscript, we used the value 70 of the parameter gt.
-The output folder "./data_res" contains detailed information about overlap between proteins with annotations 
+than parameter "--gt" and vice versa. In the case of the analyses in the manuscript, we used the value 70 of the parameter "--gt".
+The output folder "./data_res/" contains detailed information about overlap between proteins with annotations 
 and protein families. 
 
- In the next step, the script "./count_hypergeom.py" calculates the hypergeometric test with Benjamini-Hochberg correction. 
- This script requires files from the ./data_res folder from the previous script. In this analysis we have excluded annotations with 
+ In the next step, the script "./src/count_hypergeom.py" calculates the hypergeometric test with Benjamini-Hochberg correction. 
+ This script requires files from the "./data_res/" folder from the previous script. In this analysis we have excluded annotations with 
  with InterPro Family IDs from the LCR dataset. The output from this file is saved in the file "./hypergeom_test_total.csv".
 
 
@@ -103,7 +103,7 @@ Here you can see general commands to run scripts from this project. In order to 
 In case of our analysis, we used parameter --gt greater then 70%. It means that in this analysis, there are used only
 annotations that are covered with and covers LCRs in more then 70%. 
 
-The file 'family_GO_analyse.py' requires a data folder containing rows downloaded from the InterPro database for the
+The file './src/family_GO_analyse.py' requires a data folder containing rows downloaded from the InterPro database for the
 families RdRp, REV, and Tat. The input files used in our analyses are included in the data folder.
 
 
