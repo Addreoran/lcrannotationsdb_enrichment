@@ -11,7 +11,7 @@ def read_proteins(file):
     return uniprots
 
 
-def get_GO_quickgo(uniprots):
+def get_GO_quickgo(uniprots, GO_ids):
     go_quickgo = {i: set() for i in uniprots}
     for uniprot in uniprots:
         url = f"https://www.ebi.ac.uk/QuickGO/services/annotation/downloadSearch?includeFields=goName&includeFields=taxonName&includeFields=name&geneProductId={uniprot}"
@@ -22,10 +22,11 @@ def get_GO_quickgo(uniprots):
                 if line:
                     if line[1] == uniprot:
                         go_quickgo[uniprot].add(line[4])
+                        GO_ids.add(line[4])
     return go_quickgo
 
 
-def get_annotations_GO_lcrannotdb(uniprots):
+def get_annotations_GO_lcrannotdb(uniprots, go_ids):
     # info = {}
     go_lcrannotationsdb = {i: set() for i in uniprots}
     info = {i: "" for i in uniprots}
@@ -38,21 +39,18 @@ def get_annotations_GO_lcrannotdb(uniprots):
         },
     }
     request = requests.post(url, json=req)
-    # request = requests.post(url, data=req, verify=False)
-    print(request.text)
     for l in request.text.split("\n"):
-        print(l)
         if l.strip() and "UniProtACC" not in l:
             line = l.split(";")
             if line[0] in uniprots:
                 if "GO" in line[-1]:
                     info[line[0]] = line[1]
                     go_lcrannotationsdb[line[0]].add(line[-1].strip())
-            # print(go_lcrannotationsdb[line[0]])
+                    go_ids.add(line[-1].strip())
     return go_lcrannotationsdb, info
 
 
-def save_file(file, result_lcrannotdb, result_quickgo, go_family, info_organism):
+def save_file(file, result_lcrannotdb, result_quickgo, go_family, info_organism, go_names):
     all_go_protein = set()
     all_go_categories = set()
     summary_go_proteins = {}
@@ -105,21 +103,22 @@ def save_file(file, result_lcrannotdb, result_quickgo, go_family, info_organism)
             go_categories_no_protein = ",".join(list(goes - result_quickgo[unirpto]))
 
             go_family_text = ','.join(list(go_family))
-            f.write(f"{unirpto};"
-                    f"{info_organism[unirpto]};"
-                    f"{go_protein};"
-                    f"{go_categories};"
-                    f"{go_protein_no_categories};"
-                    f"{go_categories_no_protein};"
+            if "Accession" not in unirpto:
+                f.write(f"{unirpto};"
+                        f"{info_organism[unirpto]};"
+                        f"{go_protein};"
+                        f"{go_categories};"
+                        f"{go_protein_no_categories};"
+                        f"{go_categories_no_protein};"
 
-                    f"{common_protein_categories};"
-                    f"{go_family_text};"
-                    f"{go_protein_no_go_family};"
-                    f"{go_categories_no_go_family};"
-                    f"{go_categories_no_go_protein};"
+                        f"{common_protein_categories};"
+                        f"{go_family_text};"
+                        f"{go_protein_no_go_family};"
+                        f"{go_categories_no_go_family};"
+                        f"{go_categories_no_go_protein};"
 
-                    f"{common_protein_categories_no_go_family};"
-                    f"\n")
+                        f"{common_protein_categories_no_go_family};"
+                        f"\n")
             all_go_protein = all_go_protein.union(result_quickgo[unirpto])
             all_go_categories = all_go_categories.union(goes)
         all_common_protein_categories = ','.join(list(all_go_protein.intersection(all_go_categories)))
@@ -146,27 +145,47 @@ def save_file(file, result_lcrannotdb, result_quickgo, go_family, info_organism)
         #     summary_go_categories = {}
         #     summary_go_categories_no_go_protein = {}
         #     summary_go_protein_no_go_categories = {}
-        f.write("go_name;proteins_with_go;categories_with_go;go_categories_no_go_protein;go_protein_no_categories;\n")
+        f.write(
+            "go_name;go_names;proteins_with_go;categories_with_go;go_categories_no_go_protein;go_protein_no_categories;\n")
         for go, no_proteins_go in summary_go_proteins.items():
             f.write(
-                f"{go};{no_proteins_go};{summary_go_categories[go]};{summary_go_categories_no_go_protein[go]};{summary_go_protein_no_go_categories[go]}\n")
+                f"{go};{go_names[go]};{no_proteins_go};{summary_go_categories[go]};{summary_go_categories_no_go_protein[go]};{summary_go_protein_no_go_categories[go]}\n")
+
+
+def get_GO_names(GO_ids):
+    go_names = {i: set() for i in GO_ids}
+    for go_id in GO_ids:
+        url = f"https://www.ebi.ac.uk/QuickGO/services/ontology/go/terms/{go_id}"
+        request = requests.get(url, headers={'Accept': 'application/json'})
+        print(request.json())
+        for res in request.json()["results"]:
+            if res["id"] == go_id:
+                go_names[go_id] = res["name"]
+    return go_names
+    # return go_quickgo
 
 
 if __name__ == "__main__":
     rev = read_proteins("./data/rev")
     rev_family = "GO:0006355,GO:0003700,GO:0042025"
-    rev_result_quickgo = get_GO_quickgo(rev)
-    rev_result_lcrannotationsdb, info = get_annotations_GO_lcrannotdb(rev)
-    save_file("./data/rev_go.csv", rev_result_quickgo, rev_result_lcrannotationsdb, rev_family, info)
+    rev_GO_ids = set(rev_family.split(","))
+    rev_result_quickgo = get_GO_quickgo(rev, rev_GO_ids)
+    rev_result_lcrannotationsdb, info = get_annotations_GO_lcrannotdb(rev, rev_GO_ids)
+    go_names = get_GO_names(rev_GO_ids)
+    save_file("./data/rev_go.csv", rev_result_quickgo, rev_result_lcrannotationsdb, rev_family, info, go_names)
 
     rdrp = read_proteins("./data/rdrp")
-    rdrp_result_quickgo = get_GO_quickgo(rdrp)
-    rdrp_result_lcrannotationsdb, info = get_annotations_GO_lcrannotdb(rdrp)
     rdrp_family = "GO:0003968,GO:0003723,GO:0039694"
-    save_file("./data/rdrp_go.csv", rdrp_result_quickgo, rdrp_result_lcrannotationsdb, rdrp_family, info)
-    #
+    rdrp_GO_ids = set(rdrp_family.split(","))
+    rdrp_result_quickgo = get_GO_quickgo(rdrp, rdrp_GO_ids)
+    rdrp_result_lcrannotationsdb, info = get_annotations_GO_lcrannotdb(rdrp, rdrp_GO_ids)
+    go_names = get_GO_names(rdrp_GO_ids)
+    save_file("./data/rdrp_go.csv", rdrp_result_quickgo, rdrp_result_lcrannotationsdb, rdrp_family, info, go_names)
+
     tat = read_proteins("./data/tat")
-    tat_result_quickgo = get_GO_quickgo(tat)
-    tat_result_lcrannotationsdb, info = get_annotations_GO_lcrannotdb(tat)
     tat_family = "GO:0050434,GO:0001070,GO:0042025"
-    save_file("./data/tat_go.csv", tat_result_quickgo, tat_result_lcrannotationsdb, tat_family, info)
+    tat_GO_ids = set(tat_family.split(","))
+    tat_result_quickgo = get_GO_quickgo(tat, tat_GO_ids)
+    tat_result_lcrannotationsdb, info = get_annotations_GO_lcrannotdb(tat, tat_GO_ids)
+    go_names = get_GO_names(tat_GO_ids)
+    save_file("./data/tat_go.csv", tat_result_quickgo, tat_result_lcrannotationsdb, tat_family, info, go_names)

@@ -2,8 +2,7 @@ import requests
 
 
 class LCRAnnotDBData:
-    def __init__(self, path, gt):
-        self.path = path
+    def __init__(self, gt):
         self.protein_no = None
         if self.protein_no is None:
             self.protein_no = self.get_protein_no()

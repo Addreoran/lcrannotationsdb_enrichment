@@ -14,12 +14,12 @@ from src.download_data_lcrannotdb import LCRAnnotDBData
 
 @click.command()
 @click.option('--gt', default=70, help='The lowest value of LCR and annotation coverage.')
-@click.option('--path', default="", help='Path to folder with data about annotations.')
+# @click.option('--path', default="", help='Path to folder with data about annotations.')
 
-def main():
+def main(gt):
     folder = "./data_res/"
     files = os.listdir(folder)
-    lcrannotdb_data = LCRAnnotDBData("", 0)
+    lcrannotdb_data = LCRAnnotDBData(gt)
     all_proteins = lcrannotdb_data.protein_no
     new_file_data = []
     for file in files:

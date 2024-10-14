@@ -1,28 +1,110 @@
-# Enrichment of LCR annotations in protein families
-LCRs are usually observed as short fragments of the whole protein sequence. To analyze how functional annotations of LCRs are related to a general protein function, we analyzed enrichment of LCR annotations in InterPro families.
-This method was implemented to asses usability of LCRAnnotationsDB. 
+# Table of Contents
 
-# Technologies
-Project is created with Python3.6 and several packages to download data to analysis and run statistic tests (see file requirements.txt).
+- [Description](#description)
 
-## Setup and run
-This project was implemented in linux dystrybution and we present only setup with pip package. To run this analysis, run following steps:
+    - [Enrichment of LCR annotations in protein families](#enrichment-of-lcr-annotations-in-protein-families)
+    - [Gene Ontology terms of LCR annotation categories in selected protein families](#gene-ontology-terms-of-lcr-annotation-categories-in-selected-protein-families)
+
+- [Requirements](#requirements-)
+
+- [Setup and run](#requirements-)
+
+
+# Description
+
+This repository contains code to generate data for publication "LCRAnnotationsDB: a database of low complexity regions
+functional and structural annotations":
+
+1. Appendix A - it contains data about enrichment of LCR annotations in protein families (see part 2.3 of manuscript),
+2. Appendix D - it contains data with Gene Ontologies of selected families with proteins enriched in low complexity
+   regions, these data are detailed described in part 3.1.1 of manuscript.
+
+## Enrichment of LCR annotations in protein families
+
+First, the user needs to download information about InterPro Families from the InterPro database. 
+To get it, it is necessary to run the script "download_interpro_families.py". It needs parameters "gt" to 
+to obtain families of only proteins with categories with annotations covering all LCRs with value greater 
+than parameter gt and vice versa. In the case of the analyses in the manuscript, we used the value 70 of the parameter gt.
+The output folder "./data_res" contains detailed information about overlap between proteins with annotations 
+and protein families. 
+
+ In the next step, the script "./count_hypergeom.py" calculates the hypergeometric test with Benjamini-Hochberg correction. 
+ This script requires files from the ./data_res folder from the previous script. In this analysis we have excluded annotations with 
+ with InterPro Family IDs from the LCR dataset. The output from this file is saved in the file "./hypergeom_test_total.csv".
+
+
+```
+ $python3 ./src/download_interpro_families.py --gt 70
+ $python3 ./src/count_hypergeom.py --gt 70
+```
+
+
+The scripts included in this repository are illustrative of the analysis presented here due to the considerable volume 
+of data required. To obtain the results of this analysis, we utilised other scripts with a direct connection to the 
+database on the server. Due to the lack of access to this server for users, we rewrite it in order to 
+visualise the execution of this analysis.  
+
+## Gene Ontology terms of LCR annotation categories in selected protein families
+
+As an output, there is a summary of the Gene Ontology (GO) terms associated with the families, proteins, and categories 
+analysed in the use case of manuscript about LCRAnnotationsDB (section 3.1.1). The GOs originate from the QuickGO database, while those pertaining to the categories have
+been sourced from the LCRAnnotationsDB database. The information concerning the families has been obtained from the 
+InterPro database.
+
+The data were collated and formatted into Excel sheets, titled "REV - GO of families, categories and proteins," 
+"RdRp - GO of families, categories and proteins," and "Tat - GO of families, categories and proteins." 
+These sheets can be found in Appendix D of the publication 
+"LCRAnnotationsDB: a database of low complexity regions functional and structural annotations" 
+from which they were also used to create Appendix D.
+
+After the setup commands, this part can be run with command:
+
+```
+ $python3 ./src/famiLy_GO_analyse.py
+```
+
+This script downloads Gene Ontology (GO) terms for proteins from the QuickGO database and GO terms categories of LCR 
+annotations from LCRAnnotationsDB. The proteins used in this analysis are sourced from the folder "./Data/". Finally,
+the coverage of families, GO terms and GO terms of proteins and GO terms of categories of LCR annotations for each 
+protein are compared. 
+
+# Requirements
+
+Project is created with Python3.6 and several packages to download data to analysis and run statistic tests (see file
+requirements.txt).
+
+# Setup and run
+
+This project was implemented in linux dystrybution and we present only setup with pip package. To run this analysis, run
+following steps:
 
 1. Install Python
+
 ```
 $sudo apt-get update
 $sudo apt-get install python3.6
 ```
+
 2. Install requirements
+
 ```
 $pip install -r requirements.txt
 ```
-3. Run analysis
-```
- $python3 ./src/download_interpro_families.py --gt 70 --path "<path_to_save_tmp_files>"
- $python3 ./src/count_hypergeom.py --gt 70 --path "<path_to_save_tmp_files>"
- $python ./src/famiLy_GO_analyse.py
-```
-In case of our analysis, we used parameter --gt greater then 70%. It means that in this analysis, there are used only annotations that are covered with and covers LCRs in more then 70%. Parameter --path "path_to_save_tmp_files" requires path to empty folder.
 
-The file 'family_GO_analyse.py' requires a data folder containing rows downloaded from the InterPro database for the families RdRp, REV, and Tat. The input files used in our analyses are included in the data folder.
+3. Run analysis - shortcut
+
+Here you can see general commands to run scripts from this project. In order to see more detailed description of run analysis, see [Description](#description) chapter.
+```
+ $python3 ./src/download_interpro_families.py --gt 70"
+ $python3 ./src/count_hypergeom.py --gt 70"
+ $python3 ./src/famiLy_GO_analyse.py
+```
+
+In case of our analysis, we used parameter --gt greater then 70%. It means that in this analysis, there are used only
+annotations that are covered with and covers LCRs in more then 70%. 
+
+The file 'family_GO_analyse.py' requires a data folder containing rows downloaded from the InterPro database for the
+families RdRp, REV, and Tat. The input files used in our analyses are included in the data folder.
+
+
+

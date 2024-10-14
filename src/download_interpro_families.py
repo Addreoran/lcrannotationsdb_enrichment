@@ -11,7 +11,7 @@ from src.download_data_lcrannotdb import LCRAnnotDBData
 @click.option('--gt', default=70, help='The lowest value of LCR and annotation coverage.')
 @click.option('--path', default="", help='Path to folder with data about annotations.')
 def main(gt, path):
-    lcrannotdb_data = LCRAnnotDBData(path, gt)
+    lcrannotdb_data = LCRAnnotDBData(gt)
     category_once = lcrannotdb_data.get_categories_pk_list()
     biggest_cat = {}
     for e, category_pk in enumerate(category_once):
@@ -20,6 +20,10 @@ def main(gt, path):
     tmp_families_per_protein = read_tmp_data("tmp_families_per_protein.csv")
     tmp_families_proteins = read_tmp_data("tmp_families_proteins.csv")
     meaning_result = []
+    if not os.path.exists("./data_res_proteins/"):
+        os.mkdir("./data_res_proteins/")
+    if not os.path.exists("./data_res/"):
+        os.mkdir("./data_res/")
     for category_pk in sorted(biggest_cat.items(), key=lambda x: x[1], reverse=True):
         all_data = {}
         category_pk = category_pk[0]
@@ -83,53 +87,7 @@ def main(gt, path):
                 else:
                     annotations_proteins_interpro[annotation] = tmp_families_proteins[annotation]
         res = []
-        for annotation, annot_proteins in annotations_proteins.items():
-            for family, family_proteins in families_proteins.items():
-                if len(annot_proteins & family_proteins) > 0:
-                    res.append([str(category_pk),
-                                str(lcrannotdb_data.get_category_name_by_pk(category_pk)),
-                                str(annotation),
-                                str(family),
-                                str(len(annot_proteins)),
-                                str(len(family_proteins)),
-                                str(len(annotations_proteins_interpro.get(annotation, []))),
-                                str(len(annot_proteins & family_proteins)),
-                                str(len(annot_proteins & family_proteins) / len(annot_proteins)),
-                                str(len(annot_proteins & family_proteins) / len(family_proteins)),
-                                str(len(annotations_proteins_interpro.get(annotation, [])) / len(annot_proteins)),
-                                str(len(annotations_proteins_interpro.get(annotation, [])) / len(family_proteins)),
-                                ])
-                    if (len(annot_proteins & family_proteins) / len(annot_proteins)) > 0.20 and (len(
-                            annot_proteins & family_proteins) / len(
-                        family_proteins)) > 0.20 and len(
-                        annot_proteins) > 10 and len(family_proteins) > 10:
-                        meaning_result.append([str(category_pk),
-                                               str(lcrannotdb_data.get_category_name_by_pk(category_pk)),
-                                               str(annotation),
-                                               str(family),
-                                               str(len(annot_proteins)),
-                                               str(len(family_proteins)),
-                                               str(len(annotations_proteins_interpro.get(annotation, []))),
-                                               str(len(annot_proteins & family_proteins)),
-                                               str(len(annot_proteins & family_proteins) / len(
-                                                   annot_proteins)).replace(".", ","),
-                                               str(len(annot_proteins & family_proteins) / len(
-                                                   family_proteins)).replace(".", ","),
-                                               str(len(annotations_proteins_interpro.get(annotation, [])) / len(
-                                                   annot_proteins)).replace(".", ","),
-                                               str(len(annotations_proteins_interpro.get(annotation, [])) / len(
-                                                   family_proteins)).replace(".", ","),
-                                               ])
-                        save_as_fasta(path=f"./data_res_proteins/an_{annotation.replace('/', '_')}",
-                                      dataset=select_annotations_sequences(annot_proteins, lcrannotdb_data))
-                        save_as_fasta(path=f"./data_res_proteins/fam_{annotation.replace('/', '_')}",
-                                      dataset=select_family_sequences(family_proteins, lcrannotdb_data))
-                        save_as_fasta(path=f"./data_res_proteins/no_an_fam_{annotation.replace('/', '_')}",
-                                      dataset=select_family_sequences(
-                                          family_proteins - annot_proteins, lcrannotdb_data))
-                        save_as_fasta(path=f"./data_res_proteins/an_no_fam_{annotation.replace('/', '_')}",
-                                      dataset=select_family_sequences(
-                                          annot_proteins - family_proteins, lcrannotdb_data))
+
         with open(f"./data_res/{str(lcrannotdb_data.get_category_name_by_pk(category_pk)).replace('/', '_')}",
                   "w") as f:
             f.write(f"category_pk.pk|"
@@ -150,25 +108,7 @@ def main(gt, path):
                         f.write("|".join(i))
                         f.write("\n")
                         print("|".join(i))
-    with open(f"./result_general.csv", "w") as f:
-        f.write(f"category_pk.pk|"
-                f"Categories.objects.get(pk=category_pk.pk).Name|"
-                f"annotation|"
-                f"family|"
-                f"len(annot_proteins)|"
-                f"len(family_proteins)|"
-                f"len(annotations_proteins_interpro.get(annotation, []))|"
-                f"len(annot_proteins & family_proteins)|"
-                f"len(annot_proteins & family_proteins) / len(annot_proteins)|"
-                f"len(annot_proteins & family_proteins) / len(family_proteins)|"
-                f"len(annotations_proteins_interpro.get(annotation, [])) / len(annot_proteins)|"
-                f"len(annotations_proteins_interpro.get(annotation, [])) / len(family_proteins))\n")
-        if meaning_result:
-            for i in meaning_result:
-                if i:
-                    f.write("|".join(i))
-                    f.write("\n")
-                    print("geeral result", "|".join(i))
+
 
 
 def save_as_fasta(path, dataset):
