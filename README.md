@@ -38,9 +38,7 @@ and protein families.
  $python3 ./src/count_hypergeom.py --gt 70
 ```
 
-Warning: To obtain the results of this analysis, we used other scripts with a direct connection to the database on the server. 
-Due to the lack of access to this server for users, we rewrite it to visualize the execution of this analysis. With very 
-long time of code execution, users can get correct result with the new version of InterPro Database.
+Warning: The code has very long execution time and calculates analysis with the latest version of InterPro database.
 
 ## Gene Ontology terms of LCR annotation categories in selected protein families
 
