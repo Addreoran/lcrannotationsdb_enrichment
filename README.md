@@ -39,10 +39,11 @@ and protein families.
 ```
 
 
-The scripts included in this repository are illustrative of the analysis presented here due to the considerable volume 
+The scripts included in this repository contains workflow of the analysis presented here due to the considerable volume 
 of data required. To obtain the results of this analysis, we utilised other scripts with a direct connection to the 
 database on the server. Due to the lack of access to this server for users, we rewrite it in order to 
-visualise the execution of this analysis.  
+visualise the execution of this analysis. With very long time of code execution, users can get correct result, 
+with the new version of InterPro Database.
 
 ## Gene Ontology terms of LCR annotation categories in selected protein families
 
@@ -101,8 +102,8 @@ Here you can see general commands to execute scripts from this project. To see a
  $python3 ./src/famiLy_GO_analyse.py
 ```
 
-In the case of our analysis, we used the parameter --gt greater than 70%. It means that in this analysis only
-annotations that are covered by LCRs in more than 70%. 
+In the case of our analysis, we used the parameter --gt greater than 70%. This means that in this analysis only
+annotations that are more than 70% covered by LCRs. 
 
 The file './src/family_GO_analyse.py' requires a data folder containing rows from the InterPro database for the
 RdRp, REV, and Tat families. The input files used in our analyses are included in the data folder.
