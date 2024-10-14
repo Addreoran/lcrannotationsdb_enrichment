@@ -4,7 +4,7 @@ import requests
 
 import click
 
-from src.download_data_lcrannotdb import LCRAnnotDBData
+from download_data_lcrannotdb import LCRAnnotDBData
 
 
 @click.command()
