@@ -103,5 +103,11 @@ annotations that are more than 70% covered by LCRs.
 The file './src/family_GO_analyse.py' requires a data folder containing rows from the InterPro database for the
 RdRp, REV, and Tat families. The input files used in our analyses are included in the data folder.
 
+# How to cite
+
+Ziemska-Legiecka J, Jarnot P, Szymańska S, Błaszczyk D, Staśczak A, Langer-Macioł H, Lucińska K, Widzisz K, Janas A, Słowik H, Śliwińska W, Gruca A, Grynberg M. LCRAnnotationsDB: a database of low complexity regions functional and structural annotations. BMC Genomics. 2024 Dec 27;25(1):1251. doi: 10.1186/s12864-024-10960-5. PMID: 39731018; PMCID: PMC11674544.
+
+
+
 
 
